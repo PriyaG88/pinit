@@ -30,7 +30,10 @@ gem 'annotate'
 gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'devise'
 gem 'jquery-rails'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2', '~> 0.2.2'
 gem 'pry-rails'
 
 # Use Capistrano for deployment
