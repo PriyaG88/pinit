@@ -16,5 +16,5 @@ export const logout = () => dispatch => (
 
 const receiveCurrentUser = user => ({
   type: RECEIVE_CURRENT_USER,
-  user
+  payload: user
 });
