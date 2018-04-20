@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Reset */
+ html {
+   height: 100%;
+   box-sizing: border-box;
+ }
+
+ *, *:before, *:after {
+   box-sizing: inherit;
+ }
+
+ body {
+   height: inherit;
+   width: inherit;
+   margin: 0;
+ }
