@@ -4,12 +4,17 @@
 
 /* Session */
 
+:root {
+  --main-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",メイリオ,Meiryo,"ＭＳ Ｐゴシック",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
 .session-background {
   background-color: #000;
   background-image: url(https://s.pinimg.com/webapp/style/images/bg_multi_case_grid_no_text_white_55_percent-2000ab22.jpg);
   background-position: 0 600px;
   background-size: cover;
-  /* animation: 80s bgScroll linear; */
+  animation: 35s bgScroll linear;
+  // transition: background-position 20s linear .00001s;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -26,10 +31,10 @@
 
 @keyframes bgScroll {
   0% {
-    transform: translateY(0);
+    background-position: 0 600px;
   }
   100% {
-    transform: translateY(-50%);
+    background-position: 0 500px;
   }
 }
 
@@ -52,10 +57,11 @@
 .session-form-container {
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #fff;
   justify-content: center;
   align-items: center;
+  width: 400px;
 }
 
 .logo-container {
@@ -67,15 +73,15 @@
   color: #555;
   font-size: 28px;
   font-weight: bold;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue", Helvetica;
+  font-family: var(--main-font);
 }
 
 .heading-slogan {
   margin-top: 0;
   color: #ccc;
   font-size: 18px;
+  font-family: var(--main-font);
   font-weight: bold;
-  font-family: inherit;
 }
 
 .session-input {
@@ -83,9 +89,14 @@
   width: 250px;
   height: 40px;
   border: 1px solid #b5b5b5;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-bottom: 10px;
   padding-left: 10px;
+  color: #555;
+  font-size: 16px;
+  font-family: var(--main-font);
+  font-weight: 400;
+  letter-spacing: -.4px;
 }
 
 .session-continue-btn {
@@ -96,17 +107,22 @@
   background-color: #bd081c;
   color: #fff;
   font-size: 14px;
+  font-family: var(--main-font);
+  font-weight: 500;
 }
 
 .or {
   text-transform: uppercase;
   font-size: 12px;
+  font-family: var(--main-font);
   font-weight: bold;
   color: #555;
 }
 
 .session-login-btn {
   display: block;
+  font-family: var(--main-font);
+  font-weight: 500;
   width: 250px;
   height: 40px;
   border-radius: 3px;
@@ -128,33 +144,43 @@
 .terms {
   font-size: 12px;
   color: #aaa;
+  width: 250px;
 }
 
 .session-info-container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: flex-end;
   color: #fff;
+  font-size: 20px;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto Oxygen-Sans", Ubuntu, Cantarell, "“Fira Sans”", "“Droid Sans”", "Helvetica Neue", Helvetica, "\\30D2ラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", "\\30E1イリオ", Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif;
-  width: 230px;
+  font-family: var(--main-font);
+  margin-bottom: 0;
+  margin-left: 25px;
+  padding: 10px;
+  position: relative;
   z-index: 1;
+  width: 250px;
+  height: 250px;
+  background-color: #bd081c;
+  border-radius: 50% 50% 50% 10%;
+
 }
 
-.session-info-container p {
-  background-color: #bd081c;
-  border-radius: 20px;
-  font-size: 18px;
-  padding: 20px;
-  margin-bottom: 0;
-  margin-left: 20px;
-
+.session-info-content {
+  letter-spacing: .8px;
+  padding: 25px;
+  position: absolute;
+  bottom: 0;
 }
 
 .info-btn {
   color: #fff;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   background-color: #bd081c;
   border-radius: 5px;
-  width: 100px;
+  font-family: var(--main-font);
+  font-size: 16px;
+  width: 130px;
+  height: 35px;
 }
