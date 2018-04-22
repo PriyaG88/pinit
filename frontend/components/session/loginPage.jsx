@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OAuth from './oAuth';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -26,7 +27,14 @@ class LoginPage extends Component {
               </path>
             </svg>
           </div>
-          <form onSubmit={this.handleSubmit} className='login-form'>
+          <div className='login-heading-container'>
+            <h2 className='heading login-heading'>Log in to see more</h2>
+          </div>
+          <div className='slogan-content'>
+            <h4 className='heading-slogan login-slogan'>Free, unlimited access to content</h4>
+            <h4 className='heading-slogan login-slogan'>Discover new ideas to try</h4>
+          </div>
+          <form onSubmit={this.handleSubmit} className='session-form login-form'>
             <input
               type='email'
               placeholder='Email'
@@ -44,6 +52,7 @@ class LoginPage extends Component {
                 value='Log in'
                 className='session-login-btn'></input>
           </form>
+          <OAuth />
         </div>
       </div>
     );
