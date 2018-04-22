@@ -29,3 +29,7 @@
    width: inherit;
    margin: 0;
  }
+
+ main {
+   height: inherit;
+}
