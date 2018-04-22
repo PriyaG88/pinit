@@ -1,14 +1,15 @@
 const token = document.getElementsByName('csrf-token')[0].content;
+const headers = {
+  'X-Requested-With': 'XMLHttpRequest',
+  'X-CSRF-Token': token,
+  'Content-type': 'application/json',
+  'Accept': 'application/json'
+};
 
 export const signup = user => (
   fetch('api/user', {
     method: 'post',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest',
-      'X-CSRF-Token': token,
-      'Content-type': 'application/json',
-      'Accept': 'application/json'
-    },
+    headers,
     body: JSON.stringify({user: user}),
     credentials: 'same-origin'
   })
@@ -20,12 +21,7 @@ export const signup = user => (
 export const login = user => (
   fetch('api/session', {
     method: 'post',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest',
-      'X-CSRF-Token': token,
-      'Content-type': 'application/json',
-      'Accept': 'application/json'
-    },
+    headers,
     body: JSON.stringify({user: user}),
     credentials: 'same-origin'
   })
@@ -36,6 +32,8 @@ export const login = user => (
 
 export const logout = () => (
   fetch('api/session', {
-    method: 'delete'
+    method: 'delete',
+    headers,
+    credentials: 'same-origin'
   })
 );
