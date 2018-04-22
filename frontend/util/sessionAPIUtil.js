@@ -20,7 +20,17 @@ export const signup = user => (
 export const login = user => (
   fetch('api/session', {
     method: 'post',
-    body: JSON.stringify(user)
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest',
+      'X-CSRF-Token': token,
+      'Content-type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({user: user}),
+    credentials: 'same-origin'
+  })
+  .then(res => {
+    return res.json();
   })
 );
 
