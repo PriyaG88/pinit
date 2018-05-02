@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import SessionPage from './components/session/sessionPage';
 import LoginPageContainer from './components/session/loginPageContainer';
-import Home from './components/home';
+import Home from './components/ui/home';
 
 const App = () => (
   <Switch>
