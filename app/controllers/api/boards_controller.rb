@@ -5,7 +5,16 @@ class Api::BoardsController < ApplicationController
   end
 
   def create
-    
+    @board = Board.new(board_params)
+    if @board.save
+      render 'api/boards/show'
+    else
+      render json: @board.errors.full_messages
+    end
+  end
+
+  def show
+    @board = Board.find(params[:id])
   end
 
   private
