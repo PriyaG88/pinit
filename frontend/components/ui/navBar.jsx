@@ -1,11 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../../icons/logo';
+import Avatar from 'react-avatar';
 
-const NavBar = () => (
-  <nav className='top-nav'>
+const NavBar = ({ currentUser }) => {
+  let userName;
+
+  if (currentUser) {
+    userName = currentUser.email.slice(0, currentUser.email.indexOf('@'));
+  }
+
+  return (
+    <nav className='top-nav'>
     <div className='logo-container nav-logo'>
-      <Logo />
+      <NavLink to='/'>
+        <Logo />
+      </NavLink>
     </div>
     <div className='search-container'>
       <div className='search-icon'>
@@ -15,12 +25,23 @@ const NavBar = () => (
       </div>
     </div>
     <div className='nav-item'>
-      <NavLink to='/home'>Home</NavLink>
+      <NavLink to='/'>Home</NavLink>
     </div>
     <div className='nav-item'>
       <NavLink to='/explore'>Explore</NavLink>
     </div>
+    { userName ?
+      <NavLink to={`/${userName}`} className='avatar-link'>
+        <Avatar name={userName} size={30} round={true} className='avatar'/>
+        <span className='user-name'>{userName}</span>
+      </NavLink>
+    :
+      <div className='nav-item'>
+        <NavLink to='/login'>Login</NavLink>
+      </div>
+    }
   </nav>
-);
+  );
+};
 
 export default NavBar;
