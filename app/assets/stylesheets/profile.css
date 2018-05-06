@@ -1,0 +1,40 @@
+.name {
+  font-size: 35px;
+  color: #555;
+  font-family: var(--main-font);
+  font-weight: 600;
+}
+
+.user-info-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user-info {
+  display: inline-block;
+}
+
+.follow-info-item {
+  display: inline-block;
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.follow-info-item a {
+  text-decoration: none;
+  color: #555;
+}
+
+.follow-info-item a:hover {
+  text-decoration: underline;
+}
+
+.follow-info-item:last-child {
+  margin-left: 15px;
+}
+
+.user-avatar-lg {
+  display: inline-block;
+}
