@@ -1,10 +1,12 @@
 class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: %i[facebook google_oauth2]
-  validates :email, :age, :password_digest, :session_token, presence: true
+  validates :email, :name, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
   attr_reader :password
+
+  has_many :boards
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
