@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180507054459) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
-    t.string "name"
+    t.string "name", null: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["session_token"], name: "index_users_on_session_token"
   end
