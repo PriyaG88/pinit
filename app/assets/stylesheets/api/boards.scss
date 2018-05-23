@@ -1,3 +1,122 @@
 // Place all the styles related to the api/boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+:root {
+  --main-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",メイリオ,Meiryo,"ＭＳ Ｐゴシック",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.create-board-container {
+  display: inline-block;
+  width: 300px;
+  cursor: pointer;
+}
+
+.create-board-container:hover {
+
+}
+
+.create-board-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  background-color: #efefef;
+  border-radius: 8px;
+}
+
+.add-icon path {
+  fill: #bd081c;
+}
+
+.create-board-footer {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 45px;
+  color: #b5b5b5;
+  background-color: #fff;
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -.4px;
+}
+
+/* BoardModal */
+
+.modal-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.board-form {
+  width: 600px;
+  height: 300px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-form-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-form h4 {
+  font-family: var(--main-font);
+  color: #555;
+  font-size: 22px;
+}
+
+.board-form-title {
+  display: inline-block;
+}
+
+.board-form-section {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.board-form-section label {
+  color: darkgrey;
+}
+
+.board-name-input {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid darkgrey;
+
+}
+
+.board-form-actions input {
+  float: right;
+}
+
+board-form-actions {
+  border-bottom: none;
+}
+
+
+.board-form-actions button {
+  float: right;
+}
+
+.switch {
+  display: inline-block;
+  width: 60px;
+  height: 35px;
+}

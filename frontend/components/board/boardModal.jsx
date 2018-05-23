@@ -21,21 +21,28 @@ class BoardModal extends Component {
       <div className='modal-overlay'>
         <div className='form-container'>
           <form className='board-form'>
-            <h4>Create board</h4>
-            <label>Name
-              <input type='text'
-                onChange={this.handleChange}
-                value={this.state.name}
-                className='board-name'
-                placeholder='Like "Places to Go" or "Recipes to Make"'
-              />
-            </label>
-            <label className='switch'>Secret
-              <input type='checkbox' />
-              <span className='slider'></span>
-            </label>
-            <div className='board-form-actions'>
-              <input type='button' value='Cancel' />
+            <div className='board-form-header board-form-section'>
+              <h4 className='board-form-title'>Create board</h4>
+              <span className='board-cancel-container'>x</span>
+            </div>
+            <div className='board-name-container board-form-section'>
+              <label>Name
+                <input type='text'
+                  onChange={this.handleChange}
+                  value={this.state.name}
+                  className='board-name-input'
+                  placeholder='Like "Places to Go" or "Recipes to Make"'
+                />
+              </label>
+            </div>
+            <div className='board-form-secret board-form-section'>
+              <label className='switch'>Secret
+                <input type='checkbox' />
+                <span className='slider'></span>
+              </label>
+            </div>
+            <div className='board-form-actions board-form-section'>
+              <button type='button' onClick={this.props.toggleModal}>Cancel</button>
               <input type='submit' value='Create' />
             </div>
           </form>

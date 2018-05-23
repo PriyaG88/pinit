@@ -32,8 +32,8 @@ const NavBar = ({ currentUser }) => {
     </div>
     { userName ?
       <NavLink to={`/${userName}`} className='avatar-link'>
-        <Avatar name={userName} size={30} round={true} className='avatar'/>
-        <span className='user-name'>{userName}</span>
+        <Avatar name={currentUser.name} size={30} round={true} className='avatar'/>
+        <span className='user-name'>{currentUser.name}</span>
       </NavLink>
     :
       <div className='nav-item'>

@@ -11,7 +11,7 @@ class SessionForm extends Component {
     this.state = {
       email: '',
       password: '',
-      age: ''
+      name: ''
     };
   }
 
@@ -52,10 +52,10 @@ class SessionForm extends Component {
               placeholder='Create a password'
               className='session-input'></input>
             <input
-              onChange={this.update('age')}
-              type='number'
+              onChange={this.update('name')}
+              type='text'
               required
-              placeholder='Age'
+              placeholder='Name'
               className='session-input'></input>
             <input
               type='submit'

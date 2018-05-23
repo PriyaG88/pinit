@@ -1,10 +1,8 @@
 import React from 'react';
 import NavBar from './navBar';
 
-const Home = ({ currentUser }) => {
-  return (<div>
-    <NavBar currentUser={currentUser} />
-  </div>);
-};
+const Home = ({ currentUser }) => (
+  <NavBar currentUser={currentUser} />
+);
 
 export default Home;
