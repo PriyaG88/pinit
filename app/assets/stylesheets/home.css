@@ -6,6 +6,7 @@
   border-bottom: 1px solid #e2e2e2;
   padding: 5px 5px;
   position: sticky;
+  min-width: 1000px;
   width: 100%;
 }
 
