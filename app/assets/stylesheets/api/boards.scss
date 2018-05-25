@@ -74,12 +74,14 @@
 .board-form-header {
   display: flex;
   justify-content: space-between;
+  padding: 15px 18px;
 }
 
 .board-form h4 {
   font-family: var(--main-font);
   color: #555;
   font-size: 22px;
+  margin: 0;
 }
 
 .board-form-title {
@@ -115,8 +117,56 @@ board-form-actions {
   float: right;
 }
 
+/* toggle switch */
+
 .switch {
   display: inline-block;
+  position: relative;
   width: 60px;
   height: 35px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: blue;
+  border-radius: 34px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch input + .slider {
+  background-color: #fff;
+}
+
+.switch input:checked + .slider {
+  background-color: #555;
+}
+
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
