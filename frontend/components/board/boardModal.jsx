@@ -16,14 +16,19 @@ class BoardModal extends Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className='modal-overlay'>
         <div className='form-container'>
-          <form className='board-form'>
+          <form className='board-form' onSubmit={this.handleSubmit}>
             <div className='board-form-header board-form-section'>
               <h4 className='board-form-title'>Create board</h4>
-              <span className='board-cancel-container'>x</span>
+              <span className='board-cancel-container'
+                onClick={this.props.toggleModal}>x</span>
             </div>
             <div className='board-name-container board-form-section'>
               <label>Name
